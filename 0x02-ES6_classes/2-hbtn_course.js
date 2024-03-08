@@ -1,3 +1,4 @@
+/* eslint-disable valid-typeof */
 function checkVariable(variable, text, type) {
   if (variable === undefined || typeof variable !== type) {
     throw new TypeError(`${text} must be a ${type}`);
