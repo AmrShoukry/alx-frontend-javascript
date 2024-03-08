@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-const { uploadPhoto, createUser } = require('./utils');
+import { uploadPhoto, createUser } from './utils';
 
 export default function handleProfileSignup() {
   const promise1 = uploadPhoto();
