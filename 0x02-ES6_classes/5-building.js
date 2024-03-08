@@ -1,3 +1,4 @@
+/* eslint-disable operator-linebreak */
 export default class Building {
   constructor(sqft) {
     if (
