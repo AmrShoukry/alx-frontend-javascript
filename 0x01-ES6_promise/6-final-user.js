@@ -13,7 +13,7 @@ export default function handleProfileSignup(firstName, lastName, fileName) {
       },
       {
         status: responses[1].status,
-        value: responses[1].value,
+        value: String(responses[1].reason),
       },
     ])
     .catch((err) => {});
