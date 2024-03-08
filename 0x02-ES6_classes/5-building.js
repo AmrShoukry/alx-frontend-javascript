@@ -2,7 +2,7 @@
 export default class Building {
   constructor(sqft) {
     if (
-      this.constructor !== 'Building' &&
+      this.constructor !== Building &&
       typeof this.evacuationWarningMessage !== 'function'
     ) {
       throw new Error(
