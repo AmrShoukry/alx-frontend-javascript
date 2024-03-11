@@ -2,12 +2,13 @@ function setStudent(student, newGrades) {
   const studentGrade = newGrades.find(
     (grade) => student.id === grade.studentId,
   );
+  let newStudent;
   if (studentGrade) {
-    student.grade = studentGrade.grade;
+    newStudent = { ...student, grade: studentGrade.grade };
   } else {
-    student.grade = 'N/A';
+    newStudent = { ...student, grade: 'N/A' };
   }
-  return student;
+  return newStudent;
 }
 
 export default function updateStudentGradeByCity(students, city, newGrades) {
