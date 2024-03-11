@@ -12,8 +12,6 @@ function setStudent(student, newGrades) {
 
 export default function updateStudentGradeByCity(students, city, newGrades) {
   return students
-    .filter((student) => {
-      return student.location === city;
-    })
+    .filter((student) => student.location === city)
     .map((student) => setStudent(student, newGrades));
 }
