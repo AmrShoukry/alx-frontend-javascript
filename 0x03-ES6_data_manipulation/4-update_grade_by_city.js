@@ -1,15 +1,19 @@
+function setStudent(student, newGrades) {
+  const studentGrade = newGrades.find(
+    (grade) => student.id === grade.studentId,
+  );
+  if (studentGrade) {
+    student.grade = studentGrade.grade;
+  } else {
+    student.grade = 'N/A';
+  }
+  return student;
+}
+
 export default function updateStudentGradeByCity(students, city, newGrades) {
   return students
-    .filter((el) => {
-      return el.location === city;
+    .filter((student) => {
+      return student.location === city;
     })
-    .map((el) => {
-      const studentGrade = newGrades.find((grade) => el.id === grade.studentId);
-      if (studentGrade) {
-        el.grade = studentGrade.grade;
-      } else {
-        el.grade = 'N/A';
-      }
-      return el;
-    });
+    .map((student) => setStudent(student, newGrades));
 }
